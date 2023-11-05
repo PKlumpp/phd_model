@@ -1,0 +1,6 @@
+numpy
+torch==2.0.0
+ipapy
+torchinfo
+transformers
+fastqq-ctc-decode
