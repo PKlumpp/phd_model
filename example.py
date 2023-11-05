@@ -9,6 +9,7 @@ from phonetics.ipa import symbol_to_descriptor, to_symbol
 from model.wav2vec2 import Wav2Vec2
 from torchinfo import summary
 import torch
+import numpy as np
 
 
 def main():
@@ -24,7 +25,19 @@ def main():
     summary(wav2vec2, input_size=(1, 16_000), depth=8, device=device)
 
     # Create new random audio (you can load your own audio here to get actual predictions)
-    rand_audio = torch.rand((1, 16_000)).to(device)
+    rand_audio = np.random.rand(1, 16_000)
+    
+    # IMPORTANT: Always standardize input audio
+    mean = rand_audio.mean()
+    std = rand_audio.std()
+    rand_audio = (rand_audio - mean) / (std + 1e-9)
+    
+    # Create torch tensor, move to device and feed the model
+    rand_audio = torch.tensor(
+        rand_audio,
+        dtype=torch.float,
+        device=device,
+    )
     with torch.no_grad():
         y_pred, enc_features, cnn_features = wav2vec2(rand_audio)
 
