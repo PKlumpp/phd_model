@@ -1,7 +1,7 @@
 # Multilingual IPA Phone Recognition Model
 
 ## What is this?
-This is the base source code to utilize a _Wav2Vec2_-based phone recognition / feature extraction model implemented in the scope of the PhD thesis of Philipp Klumpp, entitled **Phonetic Transfer Learning from Healthy References for the Analysis of Pathological Speech**. The model parameters are deployed via huggingface. Check out the model card [here](https://huggingface.co/pklumpp/Wav2Vec2_CommonPhone).
+This is the base source code to utilize a _Wav2Vec2_-based phone recognition / feature extraction model. It was created in the scope of the PhD thesis [Phonetic Transfer Learning from Healthy References for the Analysis of Pathological Speech](https://open.fau.de/items/d0c6b800-e217-4049-ab1f-a746fc9b3966) by [Philipp Klumpp](https://scholar.google.com/citations?user=IWvgno4AAAAJ) to analyze pathological speech signals.. The model parameters are deployed via huggingface. Check out the model card [here](https://huggingface.co/pklumpp/Wav2Vec2_CommonPhone).
 
 ## Who wants to use this model?
 - You want to recognize IPA phones (for example to evaluate pronunciation)
@@ -12,6 +12,19 @@ This is the base source code to utilize a _Wav2Vec2_-based phone recognition / f
 This recognizer is capable of predicting phone symbols following the International Phonetic Alphabet (IPA), even for audio recorded under imperfect conditions, such as reverberation, background noise or poor recording equipment (like a smartphone). The model was trained using the multilingual [**Common Phone**](https://zenodo.org/records/5846137) dataset.
 
 For every recognized phone, the model also emits an associated Softmax probability, as well as two feature vectors. The first comes from the CNN block, the second from the last Transformer block.
+
+To cite this work, please use the following BibTex snippet:
+
+```
+@phdthesis{klumpp2024phdthesis,
+  author  = "Philipp Klumpp",
+  title   = "Phonetic Transfer Learning from Healthy References for the Analysis of Pathological Speech",
+  school  = "Friedrich-Alexander-Universit{\"a}t Erlangen-N{\"u}rnberg",
+  address = "Erlangen, Germany",
+  year    = 2024,
+  month   = may
+}
+```
 
 ## Which IPA symbols does this model understand?
 Check out `/phonetics/ipa.py` for the full list of IPA symbols.
