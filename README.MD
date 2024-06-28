@@ -13,19 +13,6 @@ This recognizer is capable of predicting phone symbols following the Internation
 
 For every recognized phone, the model also emits an associated Softmax probability, as well as two feature vectors. The first comes from the CNN block, the second from the last Transformer block.
 
-To cite this work, please use the following BibTex snippet:
-
-```
-@phdthesis{klumpp2024phdthesis,
-  author  = "Philipp Klumpp",
-  title   = "Phonetic Transfer Learning from Healthy References for the Analysis of Pathological Speech",
-  school  = "Friedrich-Alexander-Universit{\"a}t Erlangen-N{\"u}rnberg",
-  address = "Erlangen, Germany",
-  year    = 2024,
-  month   = may
-}
-```
-
 ## Which IPA symbols does this model understand?
 Check out `/phonetics/ipa.py` for the full list of IPA symbols.
 
@@ -54,4 +41,16 @@ The `example.py` script briefly summarizes the core functions of this model and 
 Creative Commons Zero 1.0. You can use this model for any purpose, even commercially. See the `LICENSE` for further information.
 
 ## How can I reference this work in my publication?
-The PhD thesis will be made available via arxiv.org as soon as possible. A Bibtex reference will be provided here.
+
+To cite this work, please use the following BibTex snippet:
+
+```
+@phdthesis{klumpp2024phdthesis,
+  author  = "Philipp Klumpp",
+  title   = "Phonetic Transfer Learning from Healthy References for the Analysis of Pathological Speech",
+  school  = "Friedrich-Alexander-Universit{\"a}t Erlangen-N{\"u}rnberg",
+  address = "Erlangen, Germany",
+  year    = 2024,
+  month   = may
+}
+```
